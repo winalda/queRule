@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class GamesViewController: UIViewController {
+class GamesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var filterControll: UISegmentedControl!

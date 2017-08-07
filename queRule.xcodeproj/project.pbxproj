@@ -15,6 +15,8 @@
 		A7FE6E211F311E1B00C4DCF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7FE6E1F1F311E1B00C4DCF6 /* LaunchScreen.storyboard */; };
 		A7FE6E2D1F31357A00C4DCF6 /* AddGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FE6E2C1F31357A00C4DCF6 /* AddGameViewController.swift */; };
 		A7FE6E301F3136FF00C4DCF6 /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FE6E2F1F3136FF00C4DCF6 /* GameCell.swift */; };
+		CC4D2B6E1F381119000D1A68 /* Utils+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4D2B6D1F381119000D1A68 /* Utils+String.swift */; };
+		CC4D2B701F381420000D1A68 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4D2B6F1F381420000D1A68 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		A7FE6E221F311E1B00C4DCF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7FE6E2C1F31357A00C4DCF6 /* AddGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGameViewController.swift; sourceTree = "<group>"; };
 		A7FE6E2F1F3136FF00C4DCF6 /* GameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
+		CC4D2B6D1F381119000D1A68 /* Utils+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Utils+String.swift"; sourceTree = "<group>"; };
+		CC4D2B6F1F381420000D1A68 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		A7FE6E121F311E1B00C4DCF6 /* queRule */ = {
 			isa = PBXGroup;
 			children = (
+				CC4D2B6B1F380DEA000D1A68 /* Busseiness */,
 				A7FE6E2A1F31264300C4DCF6 /* Resources */,
 				A7FE6E291F31261100C4DCF6 /* ViewController */,
 				A7FE6E281F3125FF00C4DCF6 /* Delegate */,
@@ -111,6 +116,23 @@
 				A7FE6E2F1F3136FF00C4DCF6 /* GameCell.swift */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		CC4D2B6B1F380DEA000D1A68 /* Busseiness */ = {
+			isa = PBXGroup;
+			children = (
+				CC4D2B6C1F3810E1000D1A68 /* Utils */,
+			);
+			name = Busseiness;
+			sourceTree = "<group>";
+		};
+		CC4D2B6C1F3810E1000D1A68 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CC4D2B6D1F381119000D1A68 /* Utils+String.swift */,
+				CC4D2B6F1F381420000D1A68 /* Utils.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,8 +211,10 @@
 				A7FE6E301F3136FF00C4DCF6 /* GameCell.swift in Sources */,
 				A7FE6E2D1F31357A00C4DCF6 /* AddGameViewController.swift in Sources */,
 				A7FE6E161F311E1B00C4DCF6 /* GamesViewController.swift in Sources */,
+				CC4D2B701F381420000D1A68 /* Utils.swift in Sources */,
 				A7FE6E1C1F311E1B00C4DCF6 /* queRule.xcdatamodeld in Sources */,
 				A7FE6E141F311E1B00C4DCF6 /* AppDelegate.swift in Sources */,
+				CC4D2B6E1F381119000D1A68 /* Utils+String.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +378,7 @@
 				A7FE6E271F311E1B00C4DCF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
