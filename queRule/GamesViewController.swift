@@ -21,6 +21,18 @@ class GamesViewController: UIViewController, UICollectionViewDelegate, UICollect
         super.viewDidLoad()
     }
 
-
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        if listGames.count == 0
+        {
+           let imageView = UIImageView(image: UIImage(named: "img_empty_screen"))
+           imageView.contentMode = .center
+           collectionView.backgroundView = imageView
+        }else{
+            collectionView.backgroundView = UIView()
+        }
+        
+        return listGames.count
+    }
 }
 
