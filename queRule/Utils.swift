@@ -12,6 +12,8 @@ import UIKit
 func formatColours(string: String, color: UIColor) -> NSMutableAttributedString
 {
     let length = string.characters.count
+    
+    //Utilizamos el metodo que se le agrego a Strings
     let colonPosition = string.indexOf(target: ":")!
     
     let myMutableString = NSMutableAttributedString(string: string, attributes: nil)

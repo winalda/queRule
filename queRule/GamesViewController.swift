@@ -34,5 +34,25 @@ class GamesViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         return listGames.count
     }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCell", for: indexPath) as! GameCell
+        
+        let game = listGames[indexPath.row]
+        
+        cell.lblTitle.text = game.title
+        
+        var highlightColor = #colorLiteral(red: 0.9058823529, green: 0.2980392157, blue: 0.2352941176, alpha: 1)
+        
+        if !game.borrowed
+        {
+            highlightColor = #colorLiteral(red: 0.2196078431, green: 0.2862745098, blue: 0.8588235294, alpha: 1)
+        }
+        
+        cell.lblBorrowed.attributedText = formatColours(string: "PRESTADO: \(game.borrowed ? "SI" : "NO")", color: highlightColor)
+        
+        return cell
+    }
 }
 

@@ -40,7 +40,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tpY-HF-WDv" customClass="GameCell" customModule="queRule" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GameCell" id="tpY-HF-WDv" customClass="GameCell" customModule="queRule" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -138,7 +138,7 @@
         <scene sceneID="7Bz-M2-5dd">
             <objects>
                 <navigationController id="ljy-4K-Ram" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aPd-P7-HyJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aPd-P7-HyJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.34901960780000002" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -291,7 +291,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k3d-Jq-x9Q" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="DbH-SE-iTx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DbH-SE-iTx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.34901960780000002" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
