@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A73AC39F1F3CB9070054A4F0 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AC39E1F3CB9070054A4F0 /* Styles.swift */; };
 		A7FE6E141F311E1B00C4DCF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FE6E131F311E1B00C4DCF6 /* AppDelegate.swift */; };
 		A7FE6E161F311E1B00C4DCF6 /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FE6E151F311E1B00C4DCF6 /* GamesViewController.swift */; };
 		A7FE6E191F311E1B00C4DCF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7FE6E171F311E1B00C4DCF6 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A73AC39E1F3CB9070054A4F0 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		A7FE6E101F311E1B00C4DCF6 /* queRule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = queRule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7FE6E131F311E1B00C4DCF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7FE6E151F311E1B00C4DCF6 /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A73AC39D1F3CB8B20054A4F0 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				A73AC39E1F3CB9070054A4F0 /* Styles.swift */,
+			);
+			name = Styles;
+			sourceTree = "<group>";
+		};
 		A7FE6E071F311E1B00C4DCF6 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +131,7 @@
 		CC4D2B6B1F380DEA000D1A68 /* Busseiness */ = {
 			isa = PBXGroup;
 			children = (
+				A73AC39D1F3CB8B20054A4F0 /* Styles */,
 				CC4D2B6C1F3810E1000D1A68 /* Utils */,
 			);
 			name = Busseiness;
@@ -211,6 +222,7 @@
 				A7FE6E301F3136FF00C4DCF6 /* GameCell.swift in Sources */,
 				A7FE6E2D1F31357A00C4DCF6 /* AddGameViewController.swift in Sources */,
 				A7FE6E161F311E1B00C4DCF6 /* GamesViewController.swift in Sources */,
+				A73AC39F1F3CB9070054A4F0 /* Styles.swift in Sources */,
 				CC4D2B701F381420000D1A68 /* Utils.swift in Sources */,
 				A7FE6E1C1F311E1B00C4DCF6 /* queRule.xcdatamodeld in Sources */,
 				A7FE6E141F311E1B00C4DCF6 /* AppDelegate.swift in Sources */,

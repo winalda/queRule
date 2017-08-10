@@ -29,6 +29,9 @@
                                     <segment title="Todos"/>
                                 </segments>
                                 <color key="tintColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="filterChagenWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Joz-22-xzQ"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Eyb-wy-8Cf">
                                 <rect key="frame" x="26" y="110" width="323" height="547"/>
@@ -281,6 +284,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jaW-gz-T6x"/>
+                    <connections>
+                        <outlet property="borrowedSwitch" destination="cwV-cN-d5T" id="xWx-m0-SbF"/>
+                        <outlet property="btnDelete" destination="Rr7-zv-D1C" id="GOb-4R-lNb"/>
+                        <outlet property="gameImageView" destination="5Wl-f2-X6n" id="5dc-bc-AnO"/>
+                        <outlet property="txtBorrowedDate" destination="LXl-cf-8kl" id="4Gp-PD-S1x"/>
+                        <outlet property="txtBorrowedTo" destination="F8c-2g-ckP" id="sUQ-3c-Cbf"/>
+                        <outlet property="txtTitle" destination="yXH-ul-6xO" id="6Hk-hR-ajh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VMt-R0-ssu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -313,6 +324,6 @@
         <image name="img_game_cover" width="320" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CoE-I5-VUB"/>
+        <segue reference="3Qe-o5-IR1"/>
     </inferredMetricsTieBreakers>
 </document>

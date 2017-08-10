@@ -19,7 +19,22 @@ class GamesViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        
+        //Que es alwaysBonceVertical?
+        collectionView.alwaysBounceVertical = true
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        performGamesQuery()
+    }
+    
+    //UICollectionViewDataSource
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
@@ -73,13 +88,70 @@ class GamesViewController: UIViewController, UICollectionViewDelegate, UICollect
             cell.imageView.image = UIImage(data: image)
         }
         
-        cell.layer.masksToBounds = false
-        cell.layer.shadowOffset = CGSize(width: 1, height: 1)
-        cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowRadius = 2.0
-        cell.layer.shadowOpacity = 0.2
+        styleCell(view: cell)
         
         return cell
     }
+    
+    //UICollectionViewDelegate
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //Navegacion por el segue con el identificador "editGameSegue"
+        performSegue(withIdentifier: "editGameSegue", sender: self)
+    }
+    
+    //UICollectionViewDelegateFlowLayout
+    
+    //Este metodo es para idicar de que tamañano tiene que ser la celda
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        return CGSize(width: self.view.frame.size.width - 20, height: 120.0)
+    }
+    
+    func performGamesQuery()
+    {
+        //Que es NSFetchRequest
+        let request: NSFetchRequest<Game> = Game.fetchRequest()
+        let sortByDate = NSSortDescriptor(key: "dateCreate", ascending: false)
+        
+        request.sortDescriptors = [sortByDate]
+        
+        if filterControll.selectedSegmentIndex == 0{
+            let predicate = NSPredicate(format: "borrowed = true")
+            request.predicate = predicate
+        }
+        
+        do {
+            
+            let fetchedGames = try managedObjectContext?.fetch(request)
+            
+            if let fetchedGames = fetchedGames{
+                listGames = fetchedGames
+                collectionView.reloadData()
+            }
+            
+        } catch {
+            print("Error recuperando los datos de core data")
+        }
+    }
+    
+    //Este metodo se inbaca cada ves que se realiza un scroll
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offSetY = scrollView.contentOffset.y
+        if offSetY < -120{
+            performSegue(withIdentifier: "addGameSegue", sender: self)
+        }
+    }
+    
+    //Segmented Controller
+    @IBAction func filterChagen(_sender: UISegmentedControl)
+    {
+        performGamesQuery()
+    }
 }
+
+
+
+
+
+
 

@@ -10,7 +10,7 @@ import Foundation
 
 extension String
 {
-    //Regresa la posicion donde se encunetra el valor del caracter de que le asignemos 
+    //Regresa la posicion donde se encunetra el valor del caracter que le asignemos 
     //a target
     func indexOf(target: String) -> Int?
     {

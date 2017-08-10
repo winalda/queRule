@@ -7,29 +7,38 @@
 //
 
 import UIKit
+import CoreData
+
+protocol AddGameViewControllerDelegate {
+    func didAddGame()
+}
 
 class AddGameViewController: UIViewController {
 
+    @IBOutlet weak var gameImageView : UIImageView!
+    @IBOutlet weak var borrowedSwitch : UISwitch!
+    @IBOutlet weak var txtTitle : UITextField!
+    @IBOutlet weak var txtBorrowedTo : UITextField!
+    @IBOutlet weak var txtBorrowedDate : UITextField!
+    @IBOutlet weak var btnDelete : UIButton!
+    
+    var managedObjectContext : NSManagedObjectContext!
+    var imagePickerController = UIImagePickerController()
+    
+    var camerePermissions: Bool = false
+    
+    var delegate: AddGameViewControllerDelegate?
+    
+    var game: Game? = nil
+    
+    var datePicker : UIDatePicker!
+    
+    let dateFormatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
