@@ -52,6 +52,33 @@ class GamesViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         cell.lblBorrowed.attributedText = formatColours(string: "PRESTADO: \(game.borrowed ? "SI" : "NO")", color: highlightColor)
         
+        if let borrowerTo = game.borrowedTo
+        {
+            cell.lblBorrowedTo.attributedText = formatColours(string: "A: \(borrowerTo)", color: highlightColor)
+        }else{
+            cell.lblBorrowedTo.attributedText = formatColours(string: "A: --", color: highlightColor)
+        }
+        
+        if let borrowerDate = game.borrowedDate as Date?
+        {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            cell.lblBorrowedDate.attributedText = formatColours(string: "Fecha: \(dateFormatter.string(from: borrowerDate))", color: highlightColor)
+        }else{
+            cell.lblBorrowedDate.attributedText = formatColours(string: "Fecha: --", color: highlightColor)
+        }
+        
+        if let image = game.image as Data?
+        {
+            cell.imageView.image = UIImage(data: image)
+        }
+        
+        cell.layer.masksToBounds = false
+        cell.layer.shadowOffset = CGSize(width: 1, height: 1)
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowRadius = 2.0
+        cell.layer.shadowOpacity = 0.2
+        
         return cell
     }
 }
