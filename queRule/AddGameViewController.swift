@@ -103,11 +103,18 @@ class AddGameViewController: UIViewController, UIImagePickerControllerDelegate {
         }
     }
     
-    // Cuando se utilizan los metodos de take picture gesture
+    // Cuando se utilizan los metodos de notification es necesario agregar un NSNotification
     
-    func keyBoardWillShow(){}
+    func keyBoardWillShow(notification: NSNotification)
+    {
+        let info = notification.userInfo!
+        // Recuperamos el tamaño del teclado
+        let keyBoardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue!).cgRectValue
+    }
     
-    func keyBoardWillHide(){}
+    func keyBoardWillHide(notification: NSNotification)
+    {
+     }
     
     func viewTapped(){}
     
