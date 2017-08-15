@@ -157,7 +157,29 @@ class AddGameViewController: UIViewController, UIImagePickerControllerDelegate {
         guard camerePermissions else {
             let permissionsAlertController = UIAlertController(title: "Permisos", message: "No tiene los permisos para a la camara del sispositivo. Puede cambiar esta informacion en la app de Ajustes de IOS", preferredStyle: .alert)
             let okAlert = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+            permissionsAlertController.addAction(okAlert)
+            
+            //Presentamos los permisos
+            present(permissionsAlertController, animated: true, completion: nil)
+            
+            return
         }
+        
+        //creamos el accionSheet
+        
+        let alertController = UIAlertController(title: "Añadir fotos del videojuego", message: "", preferredStyle: .actionSheet)
+        
+        let camaraOption = UIAlertAction(title: "Cámara", style: .default) { (alertAction) in
+            self.imagePickerController.sourceType = .camera
+            self.present(self.imagePickerController, animated: true, completion: nil)
+        }
+        
+        let camaraRollOption = UIAlertAction(title: "Carrete", style: .default) { (alertAction) in
+            self.imagePickerController.sourceType = .photoLibrary
+            self.present(self.imagePickerController, animated: true, completion: nil)
+        }
+        
+        let cancelOption = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
     }
     
     func datePickerChangedValue(){}
