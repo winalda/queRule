@@ -105,20 +105,60 @@ class AddGameViewController: UIViewController, UIImagePickerControllerDelegate {
     
     // Cuando se utilizan los metodos de notification es necesario agregar un NSNotification
     
+    //Al mostrar el teclado
     func keyBoardWillShow(notification: NSNotification)
     {
         let info = notification.userInfo!
         // Recuperamos el tamaño del teclado
         let keyBoardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue!).cgRectValue
+        // El tiempo que tarda en hacerse la animacion al mostrarse el teclado
+        let keyBoardTime = (info[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        
+        // Se desplazara toda la vista a la misma velocidad que el teclado sale
+        
+        //Esta animacion ya es antigua pero aun funciona
+        UIView.animate(withDuration: keyBoardTime) { 
+            self.view.frame.origin.y = -(keyBoardFrame.height)
+        }
     }
     
+    //Al ocultar el teclado
     func keyBoardWillHide(notification: NSNotification)
     {
-     }
+        let info = notification.userInfo!
+        // El tiempo que tarda en hacerse la animacion al mostrarse el teclado
+        let keyBoardTime = (info[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        
+        //Esta animacion ya es antigua pero aun funciona
+        UIView.animate(withDuration: keyBoardTime)
+        {
+            self.view.frame.origin.y = 0
+        }
+    }
     
-    func viewTapped(){}
+    //Al tocar cualquier parte del view se cierre el teclado
+    func viewTapped()
+    {
+        /*Se iran iterando por los todos lo metodos de la vista y en todos aquellos en lo cuales no encontremos un elemento
+         Que se pueda transformar en un textField*/
+        for view in self.view.subviews
+        {
+            if let textFiel = view as? UITextField
+            {
+                textFiel.resignFirstResponder()
+            }
+        }
+    }
     
-    func takePictureTapped(){}
+    //Mostrar la camara
+    func takePictureTapped()
+    {
+        // PReguntamos si tienen permisos de la camara en caso de que no mostramos un alert
+        guard camerePermissions else {
+            let permissionsAlertController = UIAlertController(title: "Permisos", message: "No tiene los permisos para a la camara del sispositivo. Puede cambiar esta informacion en la app de Ajustes de IOS", preferredStyle: .alert)
+            let okAlert = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        }
+    }
     
     func datePickerChangedValue(){}
     
